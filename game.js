@@ -47,15 +47,26 @@ const gameBoard = (() =>{
         for(let combination of winningCombinations){ // Loop through the winning combinations to check if any player has won
             if(combination.every(index => board[index] === 'X')){ // Checks if all positions -that are specified in the combination array- of the board array have the value of 'X'
                 winner.textContent = `${player1.name} WINS`;
+                stopGame();
             }else if(combination.every(index => board[index] === 'O')){
                 winner.textContent = `${player2.name} WINS`;
+                stopGame();
             } 
         }
             if(board.every(item => item !== '')){ // Checks that every item in the board array is not an empty string (i.e the board is full)
                 winner.textContent = "IT'S A TIE";
-            }
-            
+                stopGame();
+            }         
     }
+
+    function stopGame(){
+        if(winner.textContent !== ''){ // If the result has been displayed disable clicks on all the boxes
+            boxes.forEach(box => {
+                box.style.pointerEvents = 'none';
+            })
+        }
+    }
+
 
 
         return {board, addMark};
