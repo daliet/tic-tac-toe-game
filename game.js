@@ -1,4 +1,5 @@
 const boxes = document.querySelectorAll('.box');
+let winner = document.querySelector('.winner');
 
 const playerFactory = (name, symbol) => { // Factory function that creates an object that contains the player's name and symbol
     return {name, symbol};
