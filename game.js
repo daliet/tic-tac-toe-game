@@ -1,5 +1,6 @@
 const boxes = document.querySelectorAll('.box');
 let winner = document.querySelector('.winner');
+const resetButton = document.querySelector('.reset-button');
 
 const playerFactory = (name, symbol) => { // Factory function that creates an object that contains the player's name and symbol
     return {name, symbol};
@@ -69,7 +70,17 @@ const gameBoard = (() =>{
         }
     }
 
+    function resetGame(){
+        board = Array(9).fill(''); // Reset the board array
+        boxes.forEach(box => {
+            box.textContent = ''; // Clear the text of each  box
+            box.style.pointerEvents = 'auto' // Enable clicks again
+        })
+        winner.textContent = '';
+        currentPlayer = player1; // Reset to player's 1 turn
+    }
 
+    resetButton.addEventListener('click', resetGame);
 
         return {board, addMark};
 })();
