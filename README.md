@@ -25,7 +25,7 @@ A simple, interactive Tic-Tac-Toe game built with HTML, CSS, and JavaScript. The
 
 ## How to Run
 
-[**Click here**](daliet.github.io/tic-tac-toe-game/) to play the game or:
+[**Click here**](https://daliet.github.io/tic-tac-toe-game/) to play the game or:
 
 1. Clone or download the repository.
 2. Open the `index.html` file in your web browser.
