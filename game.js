@@ -19,6 +19,11 @@ const gameBoard = (() =>{
         if(currentPlayer === player1) currentPlayer = player2;
         else currentPlayer = player1;
     }
+
+    function addSymbolColor(box){ // Updates the color of the clicked box
+            if(box.textContent === player1.symbol) box.style.color = 'red';
+            else if(box.textContent === player2.symbol) box.style.color = 'blue';
+    }
         
         
     function addMark() {
@@ -27,6 +32,7 @@ const gameBoard = (() =>{
                 if(box.textContent === '') { // Only allow marking if the box is empty
                     board[index] = currentPlayer.symbol; // Update the board with the current player's symbol at the correct index
                     box.textContent = currentPlayer.symbol; // Update the text of the box with the current player's symbol
+                    addSymbolColor(box);
                     displayWinner();
                     switchPlayer();
                 }
