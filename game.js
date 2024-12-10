@@ -46,7 +46,7 @@ const gameBoard = (() =>{
                                      [0, 4, 8]]
     
         for(let combination of winningCombinations){ // Loop through the winning combinations to check if any player has won
-            if(combination.every(index => board[index] === 'X')){ // Checks if all positions -that are specified in the combination array- of the board array have the value of 'X'
+            if(combination.every(index => board[index] === 'X')){ // Check if all positions -that are specified in the combination array- of the board array have the value of 'X'
                 winner.textContent = `${player1.name} WINS`;
                 stopGame();
                 return;
@@ -56,7 +56,7 @@ const gameBoard = (() =>{
                 return;
             } 
         }
-            if(board.every(item => item !== '')){ // Checks that every item in the board array is not an empty string (i.e the board is full)
+            if(board.every(item => item !== '')){ // Check that every item in the board array is not an empty string (i.e the board is full)
                 winner.textContent = "IT'S A TIE";
                 stopGame();
             }         
@@ -82,7 +82,7 @@ const gameBoard = (() =>{
 
     resetButton.addEventListener('click', resetGame);
 
-        return {board, addMark};
+        return {addMark};
 })();
 
 gameBoard.addMark();
