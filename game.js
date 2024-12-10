@@ -20,7 +20,7 @@ const gameBoard = (() =>{
         else currentPlayer = player1;
     }
 
-    function addSymbolColor(box){ // Updates the color of the clicked box
+    function addSymbolColor(box){ // Update the color of the clicked box
             if(box.textContent === player1.symbol) box.style.color = 'red';
             else if(box.textContent === player2.symbol) box.style.color = 'blue';
     }
