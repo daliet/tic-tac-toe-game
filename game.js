@@ -48,9 +48,11 @@ const gameBoard = (() =>{
             if(combination.every(index => board[index] === 'X')){ // Checks if all positions -that are specified in the combination array- of the board array have the value of 'X'
                 winner.textContent = `${player1.name} WINS`;
                 stopGame();
+                return;
             }else if(combination.every(index => board[index] === 'O')){
                 winner.textContent = `${player2.name} WINS`;
                 stopGame();
+                return;
             } 
         }
             if(board.every(item => item !== '')){ // Checks that every item in the board array is not an empty string (i.e the board is full)
